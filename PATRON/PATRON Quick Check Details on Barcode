@@ -1,0 +1,24 @@
+SELECT 
+p.Barcode,
+pc.City,
+pr.StatisticalClassID,
+pr.RegistrationDate
+
+FROM
+Polaris.Polaris.Patrons p WITH (NOLOCK) 
+
+INNER JOIN Polaris.Polaris.PatronRegistration pr WITH (NOLOCK)
+    ON p.PatronID = pr.PatronID
+
+INNER JOIN Polaris.Polaris.PatronAddresses pa WITH (NOLOCK)
+    ON p.PatronID = pa.PatronID
+    
+INNER JOIN Polaris.Polaris.Addresses a WITH (NOLOCK)
+    ON pa.AddressID = a.AddressID
+    
+INNER JOIN Polaris.Polaris.PostalCodes pc WITH (NOLOCK)
+    ON a.PostalCodeID = pc.PostalCodeID
+
+WHERE
+p.Barcode = ''
+;
