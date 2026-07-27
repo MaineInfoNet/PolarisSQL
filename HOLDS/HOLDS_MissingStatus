@@ -1,1 +1,30 @@
+SELECT 
+    shr.CreationDate,
+    b.BibliographicRecordID AS [Bib Record],
+    b.BrowseTitle AS [Title],
+    shr.PickupBranchID,
+    pbranch.Name AS [Pickup Branch],
+    shr.ItemLevelHoldItemRecordID,
+    o.Name AS [Assigned Branch]
+    
+FROM Polaris.Polaris.CircItemRecords cir WITH (NOLOCK)
 
+INNER JOIN Polaris.Polaris.BibliographicRecords b
+    ON b.BibliographicRecordID = cir.AssociatedBibRecordID
+    
+INNER JOIN Polaris.Polaris.Organizations o WITH (NOLOCK)
+    ON o.OrganizationID = cir.AssignedBranchID
+    
+INNER JOIN Polaris.Polaris.SysHoldRequests shr WITH (NOLOCK)
+    ON shr.BibliographicRecordID = cir.AssociatedBibRecordID
+    AND shr.SysHoldStatusID = 3
+    
+INNER JOIN Polaris.Polaris.Organizations pbranch WITH (NOLOCK)
+    ON pbranch.OrganizationID = shr.PickupBranchID
+
+WHERE
+    cir.ItemStatusID = 10
+    AND cir.AssignedBranchID <> 37
+
+ORDER BY
+    cir.ItemRecordID;
