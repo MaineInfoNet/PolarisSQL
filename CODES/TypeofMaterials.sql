@@ -5,4 +5,4 @@ tom.Precedence,
 tom.SearchCode
 
 FROM
-MARCTypeOfMaterial  tom WITH(NOLOCK)
+MARCTypeOfMaterial  tom WITH(NOLOCK);
