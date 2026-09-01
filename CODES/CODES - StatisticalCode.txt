@@ -9,4 +9,4 @@ Polaris.StatisticalCodes  sc WITH (NOLOCK)
 
 INNER JOIN
 Organizations o WITH (NOLOCK) ON
-	o.OrganizationID = sc.OrganizationID
+	o.OrganizationID = sc.OrganizationID;
