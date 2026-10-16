@@ -59,10 +59,9 @@ INNER JOIN ---Gets the TransactionDetails patron code values
         ON (PC.PatronCodeID = TD.NumValue)
 
 WHERE
-
-    TH.TranClientDate BETWEEN @StartDate AND @EndDate
-AND
     TH.TransactionTypeID = 6001
+AND TH.TranClientDate >= @StartDate
+AND TH.TranClientDate < @EndDate
 
 ORDER BY
 
@@ -115,5 +114,5 @@ INNER JOIN Polaris.Workstations W WITH (NOLOCK)
         
 WHERE 
     TH.TransactionTypeID = 6033
-AND
-    TH.TranClientDate BETWEEN @StartDate AND @EndDate
+AND TH.TranClientDate >= @StartDate
+AND TH.TranClientDate < @EndDate
