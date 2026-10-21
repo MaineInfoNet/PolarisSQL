@@ -41,8 +41,8 @@ WITH INNReachTransactions AS (
     WHERE
         th.TransactionTypeID = 6001
 
-        AND th.TransactionDate >= '2026-09-01'
-        AND th.TransactionDate < '2026-10-01'
+        AND th.TransactionDate >= '{{START_DATE}}'
+		  AND th.TransactionDate < '{{END_DATE}}'
 
         AND (
             checkoutType.numValue = 53
