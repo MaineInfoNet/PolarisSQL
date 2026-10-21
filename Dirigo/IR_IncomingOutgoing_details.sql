@@ -1,5 +1,6 @@
 -- Description: Retrieves historical INN-Reach circulation
--- transactions for incoming borrowing and outgoing lending.
+-- transactions for a selected reporting period, including
+-- incoming borrowing and outgoing lending.
 -- Identifies initial checkouts and renewals separately.
 -- Includes historical patron code and patron type.
 -- Used for monthly and annual circulation reporting.
