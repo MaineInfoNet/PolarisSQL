@@ -51,21 +51,31 @@ WITH INNReachTransactions AS (
 )
 
 SELECT
-    OrganizationID,
-    PatronCodeID,
-    PatronType,
-    ILLDirection,
-    COUNT(*) AS CirculationCount
+    t.OrganizationID AS LibraryID,
+    t.PatronCodeID,
+    t.PatronType AS [Patron Code],
 
-FROM INNReachTransactions
+    SUM(
+        CASE
+            WHEN t.ILLDirection = 'Incoming Borrowing'
+            THEN 1 ELSE 0
+        END
+    ) AS [Incoming Count],
+
+    SUM(
+        CASE
+            WHEN t.ILLDirection = 'Outgoing Lending'
+            THEN 1 ELSE 0
+        END
+    ) AS [Outgoing Count]
+
+FROM INNReachTransactions t
 
 GROUP BY
-    OrganizationID,
-    PatronCodeID,
-    PatronType,
-    ILLDirection
+    t.OrganizationID,
+    t.PatronCodeID,
+    t.PatronType
 
 ORDER BY
-    OrganizationID,
-    PatronType,
-    ILLDirection;
+    t.OrganizationID,
+    t.PatronType;
