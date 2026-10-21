@@ -1,8 +1,7 @@
-
 -- Description: Summarizes historical INN-Reach circulation
--- transactions, combining checkouts and renewals into
--- a single circulation count by organization, patron type,
--- and ILL direction (incoming borrowing or outgoing lending).
+-- transactions for a selected reporting period, combining
+-- checkouts and renewals into circulation counts by
+-- organization, patron type, and ILL direction.
 -- Uses historical patron codes from transaction details.
 -- Used for monthly and annual circulation reporting.
 
