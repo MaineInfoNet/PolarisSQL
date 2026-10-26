@@ -1,11 +1,9 @@
 SELECT
-sl.ShelfLocationID,
-sl.Description,
 sl.OrganizationID,
 o.Name,
-o.DisplayName,
+sl.ShelfLocationID,
 sl.Description
-
+	
 FROM
 polaris.ShelfLocations sl WITH (NOLOCK)
 
