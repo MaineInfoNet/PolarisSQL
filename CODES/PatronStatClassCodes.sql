@@ -9,5 +9,5 @@ FROM
 PatronStatClassCodes psc WITH(NOLOCK)
 
 INNER JOIN
-	Organizations o WITH(NOLOCK) ON
-		o.OrganizationID = psc.OrganizationID
+Organizations o WITH(NOLOCK)
+    ON o.OrganizationID = psc.OrganizationID
