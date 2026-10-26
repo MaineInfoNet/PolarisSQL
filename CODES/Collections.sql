@@ -1,11 +1,11 @@
 SELECT
-CollectionID,
-Name,
-Abbreviation,
-CreatorID,
-ModifierID,
-CreationDate,
-ModificationDate
+col.CollectionID,
+col.Name,
+col.Abbreviation,
+col.CreatorID,
+col.ModifierID,
+col.CreationDate,
+col.ModificationDate
 
 FROM
-Collections   
+polaris.Collections col WITH (NOLOCK)
