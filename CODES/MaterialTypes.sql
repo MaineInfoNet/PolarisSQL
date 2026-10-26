@@ -1,7 +1,8 @@
 SELECT
-MaterialTypeID,
-Description,
-MinimumAge
+mat.MaterialTypeID,
+mat.Description,
+mat.MinimumAge
 
 FROM
-MaterialTypes    
+polaris.MaterialTypes mat WITH (NOLOCK)
+;
