@@ -5,7 +5,6 @@ o.Name,
 o.DisplayName,
 sl.Description
 
-
 FROM
 polaris.ShelfLocations sl WITH (NOLOCK)
 
