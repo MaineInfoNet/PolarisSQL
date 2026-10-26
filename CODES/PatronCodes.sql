@@ -1,6 +1,6 @@
 SELECT 
-PatronCodeID, 
-Description 
+pc.PatronCodeID, 
+pc.Description 
 
 FROM 
-Polaris.PatronCodes WITH(NOLOCK)
+Polaris.PatronCodes pc WITH(NOLOCK)
