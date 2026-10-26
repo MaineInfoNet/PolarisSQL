@@ -8,5 +8,5 @@ FROM
 Polaris.StatisticalCodes  sc WITH (NOLOCK)
 
 INNER JOIN
-Organizations o WITH (NOLOCK) ON
-	o.OrganizationID = sc.OrganizationID;
+Organizations o WITH (NOLOCK)
+    ON o.OrganizationID = sc.OrganizationID;
