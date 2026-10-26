@@ -6,7 +6,7 @@ o.Name,
 o.DisplayName
 
 FROM
-PatronStatClassCodes psc WITH(NOLOCK)
+polaris.PatronStatClassCodes psc WITH(NOLOCK)
 
 INNER JOIN
 Organizations o WITH(NOLOCK)
