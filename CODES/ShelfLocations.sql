@@ -1,5 +1,6 @@
 SELECT
 sl.ShelfLocationID,
+sl.Description,
 sl.OrganizationID,
 o.Name,
 o.DisplayName,
