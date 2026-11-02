@@ -1,0 +1,16 @@
+SELECT DISTINCT
+    bt.BibliographicRecordID
+
+FROM Polaris.Polaris.BibliographicTags bt (NOLOCK)
+
+JOIN Polaris.Polaris.BibliographicSubfields bs (NOLOCK)
+    ON bt.BibliographicTagID = bs.BibliographicTagID
+
+JOIN Polaris.Polaris.BibliographicRecords br (NOLOCK)
+    ON bt.BibliographicRecordID = br.BibliographicRecordID
+
+WHERE
+    br.MARCBibType = '[enter record type cpde]'
+    AND bt.TagNumber = [enter Tag #]
+    AND bs.Subfield = '[enter subfield]'
+    AND bs.Data LIKE '[enter data and wildcards as needed%]'
