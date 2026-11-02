@@ -10,7 +10,7 @@ JOIN Polaris.Polaris.BibliographicRecords br (NOLOCK)
     ON bt.BibliographicRecordID = br.BibliographicRecordID
 
 WHERE
-    br.MARCBibType = '[enter record type cpde]'
+    br.MARCBibType = '[enter record type code]'
     AND bt.TagNumber = [enter Tag #]
     AND bs.Subfield = '[enter subfield]'
     AND bs.Data LIKE '[enter data and wildcards as needed%]'
